@@ -2,703 +2,523 @@
 <html lang="mk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#1e40af">
-<title>Платформа за настава – Веб</title>
-<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAIiUlEQVR4nO3dX2wUVRTH8bP/ZgEhKWJEiNRojRgkERLBB2kCioEESBOxIpTAE7wYF4KAGNAoiYAgoD7poxYLCKQSNdIH4cFAQkgIYIIggSD/U6D8K9KZdnd8GFIW2s4U7sy95977+zxDu3vmy5nZnW1JVY5vJIBHlVb9AEBvCAiEICAQgoBACAICIQgIhCAgEIKAQAgCAiEICIQgIBCCgEAIAgIhCAiEICAQgoBACAICIQgIhCAgEIKAQAgCAiEICIQgIBCSVf0AuBj2+qSH/Stndzcl8Uj0YmlAj5BLb76IhUlZFFAs0fT+W1gSk+EBSYimN9/a4JjMDEhhN93qfDzmlWRaQNzSeUDw8EzKyJyAmKdTzqSMTAhIo3TKmZGR3gFpmk453TPSNSAD0imnb0b6BWRYOuV0zEingAxOp5xeGWlzM9WSejrp8nz1CEiXacZLi2fN/RSmxRCTw/90xnoDWV5PJ85z4BsQ56nJx3YaHE9hbIelFs/TGbsNhHrCcZsPr4C4TYcnVlNiFBCruTDHZ1ZcAuIzEV0wmRiLgJjMQjsc5qY+IA5T0Jfy6SkOSPnzN4DaGaoMCPXEReEk1Z/CQGvKAsL6iZeqeaoJCPUkQclUFQSEepIjf7a4BgIhsgPC+kma5AlLDQj1yCFzzvICQj0ySZs2roFAiKSAsH7kkzNzbCAQIiMgrB9VJEweGwiEJB4Q1o9aSc8fGwiEJBsQ1g8HiR4FbCAQkmBAWD98JHcssIFASFIBYf1wk9ARwQYCIYkEhPXDUxLHheOvd4nXrqV9+udT8r9vq+tPXtsm//tKhlMYCIk/IJy/OIv96GADgRAEBEIQEAiJOSBcAPEX7zEyfwPt/aek+iGYzPz3gT7f6TkZZ8KITPgfu3DNf+979/ItX86jMob5G6jk06eN3p/Hi+F/bOjA1Fez8wMfU/CWo9biDIjtBVCxRJ/s8PadiGjomSdSG+ucAX3MbyjGI2X+Bgq0F2n5Nm//yYiGnh+cXl/n9HPkPCgT2BIQEbUX6aOfvAOnIq6pRwxNr52Zz5t/cRgPiwIiIq+Dlm11D56OaGhUZXrVO04u4rIbiGwLiIjcDlq6xT18JqKhV6syK6c7GevG89BsnFBbOy3e7P51LqKh6uGZFTVO2vxLaiGxBcT2JVi37ni0uME9ej6ioTdHZpZMyRmZUFzHy8YNFLjt0qIG7/jFiIamjc4WJuXkPCQd2RsQEbW2+Qs3eScuRTRUOzY7fwIa6p7VARHRrTZ/4SbvZHNEQ3PGZeeMwyv7btgeEBHduOMvqPdOX464CzZ/Qq52LBp6EAIiIrr+n1/Y5J65GtFQYVJu6mi8O3QfBHRXS6tfqHfPtYQ1lCJaOsWZOBIN3YOA7rlyyy/UuxeuhTWUTtHHNU71cDR0FwK6T/NNv1DvXroR1lAmTSunO2Ofw+iIEFBXl2747//gNt8MayiXodUz8qMqMT0E1J2L1/1CvXsl9NOJ+SytnZkfMdT2Adr+/HtyrsUv1LstrWEN9XNofZ1TNdjqGVr95MOdueovavBKoS/tB/RJ1Y6x+s0hBNSjFNHs17Lhd+OPnC1t2OXJekQcIaAeFSblJr4U9nL99GX/wy2e1yHtEXGEgLo3d1w2/MZF801/UYN7q832HwNCQN2YOjozL/T2e2ubv3izF/5S3xKxBXR2d1NcX0qt6uGZpVPCfiyjvUjLtnqnom7gMxfX8cIGus/LlenP3gr7GGvJp5WN3qGoj1TbAwHdU/Vk+osZjhP6qvzrpvY9f0f8cJlVENBdQypSG+qc/qE/llq/t2PHAbtfdHWBgIiIKvqlNszKD+ofVs/vh4vf7W6X9pB0gYCor0NfznKGDQqrZ//J4ppfrX7DsCdxBqTjC7FchlbV5l8cEjaHYxdLy7d5RYOum2M8UlZvoBTRihpnTOgne861+Es2e204d/XA6oAWTM69EXqz4tpt/4MG99ptvGHYI3sDmludfTv0Rvodj5Zs9s6HfsIVYg5Il8ugaaOz88aH3azoKNGK7d6xqJ9b1VG8x8jGDVQ9PLNkSlg9PtHqX6J/GxWQhQGNirpZQUTf/tHedAT19IpdAVUNTq95N+JmxfYDHT/uw9vNvRV/QGwvg4ZUpDbMcsL/66c9R4vfNJn8kj32o2PLBqrol9pYF3Gz4tC/pZU/R3wIGh5gRUB9HVo/y3n68bB6TjWXlm312nHl85BSleMbk/i6fH5hWS5D62bmX3lWzT+VnQc71v3G5ZyYxNWF4RsonaIVNY6qemyQ1GSZXErPmxBxs8IeCR0Rw/9pvvCUkb8hk5EEA2KyhICSPBaGbyBIWrIBYQlxkOhRwAYCIUm9D1SOz3tCFkr6JIANBEJkBIQrIVUkTB4bCIRICwhLSD45M8cGAiHyAsISkknatKVuIDQkh8w5yz6FoaGkSZ4wroFAiIKAsISSI3+2ajYQGkqCkqkqO4WhoXipmieugUCIyoCwhOKicJKKNxAaEqd2hupPYWhIhPLpqQ+IGExBUxzmxiIg4jELvTCZGJeAiM1EtMBnVowCIk5z4YzVlHgFRMymwxC3+XD8/z6DGeFnOR7ALZ0Auw3Uiee8VGE7Db4BEeOpScZ5DhxPYeUsP51xTifAegN14j/HJGjxrPUIiDSZZox0eb7cT2HlLDmd6ZJOQKeAAgZnpFc6Af0CChiWkY7pBHQNKGBARvqmE9A7oICmGemeTsCEgAIaZWRGOgFzAgowz8ikdAKmBRToPE5MSjKvm05mBtSp/MhJjsngaMoZHlA5CTFZEk05iwIq1/VIP0JSFubSlaUBdYUaHo02N1OBJwQEQhAQCEFAIAQBgRAEBEIQEAhBQCAEAYEQBARCEBAIQUAgBAGBEAQEQhAQCEFAIAQBgRAEBEIQEAhBQCAEAYEQBARC/geDiohI6psHxQAAAABJRU5ErkJggg==">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Платформа за настава</title>
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAIiUlEQVR4nO3dX2wUVRTH8bP/ZgEhKWJEiNRojRgkERLBB2kCioEESBOxIpTAE7wYF4KAGNAoiYAgoD7poxYLCKQSNdIH4cFAQkgIYIIggSD/U6D8K9KZdnd8GFIW2s4U7sy95977+zxDu3vmy5nZnW1JVY5vJIBHlVb9AEBvCAiEICAQgoBACAICIQgIhCAgEIKAQAgCAiEICIQgIBCCgEAIAgIhCAiEICAQgoBACAICIQgIhCAgEIKAQAgCAiEICIQgIBCSVf0AuBj2+qSH/Stndzcl8Uj0YmlAj5BLb76IhUlZFFAs0fT+W1gSk+EBSYimN9/a4JjMDEhhN93qfDzmlWRaQNzSeUDw8EzKyJyAmKdTzqSMTAhIo3TKmZGR3gFpmk453TPSNSAD0imnb0b6BWRYOuV0zEingAxOp5xeGWlzM9WSejrp8nz1CEiXacZLi2fN/RSmxRCTw/90xnoDWV5PJ85z4BsQ56nJx3YaHE9hbIelFs/TGbsNhHrCcZsPr4C4TYcnVlNiFBCruTDHZ1ZcAuIzEV0wmRiLgJjMQjsc5qY+IA5T0Jfy6SkOSPnzN4DaGaoMCPXEReEk1Z/CQGvKAsL6iZeqeaoJCPUkQclUFQSEepIjf7a4BgIhsgPC+kma5AlLDQj1yCFzzvICQj0ySZs2roFAiKSAsH7kkzNzbCAQIiMgrB9VJEweGwiEJB4Q1o9aSc8fGwiEJBsQ1g8HiR4FbCAQkmBAWD98JHcssIFASFIBYf1wk9ARwQYCIYkEhPXDUxLHheOvd4nXrqV9+udT8r9vq+tPXtsm//tKhlMYCIk/IJy/OIv96GADgRAEBEIQEAiJOSBcAPEX7zEyfwPt/aek+iGYzPz3gT7f6TkZZ8KITPgfu3DNf+979/ItX86jMob5G6jk06eN3p/Hi+F/bOjA1Fez8wMfU/CWo9biDIjtBVCxRJ/s8PadiGjomSdSG+ucAX3MbyjGI2X+Bgq0F2n5Nm//yYiGnh+cXl/n9HPkPCgT2BIQEbUX6aOfvAOnIq6pRwxNr52Zz5t/cRgPiwIiIq+Dlm11D56OaGhUZXrVO04u4rIbiGwLiIjcDlq6xT18JqKhV6syK6c7GevG89BsnFBbOy3e7P51LqKh6uGZFTVO2vxLaiGxBcT2JVi37ni0uME9ej6ioTdHZpZMyRmZUFzHy8YNFLjt0qIG7/jFiIamjc4WJuXkPCQd2RsQEbW2+Qs3eScuRTRUOzY7fwIa6p7VARHRrTZ/4SbvZHNEQ3PGZeeMwyv7btgeEBHduOMvqPdOX464CzZ/Qq52LBp6EAIiIrr+n1/Y5J65GtFQYVJu6mi8O3QfBHRXS6tfqHfPtYQ1lCJaOsWZOBIN3YOA7rlyyy/UuxeuhTWUTtHHNU71cDR0FwK6T/NNv1DvXroR1lAmTSunO2Ofw+iIEFBXl2747//gNt8MayiXodUz8qMqMT0E1J2L1/1CvXsl9NOJ+SytnZkfMdT2Adr+/HtyrsUv1LstrWEN9XNofZ1TNdjqGVr95MOdueovavBKoS/tB/RJ1Y6x+s0hBNSjFNHs17Lhd+OPnC1t2OXJekQcIaAeFSblJr4U9nL99GX/wy2e1yHtEXGEgLo3d1w2/MZF801/UYN7q832HwNCQN2YOjozL/T2e2ubv3izF/5S3xKxBXR2d1NcX0qt6uGZpVPCfiyjvUjLtnqnom7gMxfX8cIGus/LlenP3gr7GGvJp5WN3qGoj1TbAwHdU/Vk+osZjhP6qvzrpvY9f0f8cJlVENBdQypSG+qc/qE/llq/t2PHAbtfdHWBgIiIKvqlNszKD+ofVs/vh4vf7W6X9pB0gYCor0NfznKGDQqrZ//J4ppfrX7DsCdxBqTjC7FchlbV5l8cEjaHYxdLy7d5RYOum2M8UlZvoBTRihpnTOgne861+Es2e204d/XA6oAWTM69EXqz4tpt/4MG99ptvGHYI3sDmludfTv0Rvodj5Zs9s6HfsIVYg5Il8ugaaOz88aH3azoKNGK7d6xqJ9b1VG8x8jGDVQ9PLNkSlg9PtHqX6J/GxWQhQGNirpZQUTf/tHedAT19IpdAVUNTq95N+JmxfYDHT/uw9vNvRV/QGwvg4ZUpDbMcsL/66c9R4vfNJn8kj32o2PLBqrol9pYF3Gz4tC/pZU/R3wIGh5gRUB9HVo/y3n68bB6TjWXlm312nHl85BSleMbk/i6fH5hWS5D62bmX3lWzT+VnQc71v3G5ZyYxNWF4RsonaIVNY6qemyQ1GSZXErPmxBxs8IeCR0Rw/9pvvCUkb8hk5EEA2KyhICSPBaGbyBIWrIBYQlxkOhRwAYCIUm9D1SOz3tCFkr6JIANBEJkBIQrIVUkTB4bCIRICghLSD45M8cGAiHyAsISkknatKVuIDQkh8w5yz6FoaGkSZ4wroFAiIKAsISSI3+2ajYQGkqCkqkqO4WhoXipmieugUCIyoCwhOKicJKKNxAaEqd2hupPYWhIhPLpqQ+IGExBUxzmxiIg4jELvTCZGJeAiM1EtMBnVowCIk5z4YzVlHgFRMymwxC3+XD8/z6DGeFnOR7ALZ0Auw3Uiee8VGE7Db4BEeOpScZ5DhxPYeUsP51xTifAegN14j/HJGjxrPUIiDSZZox0eb7cT2HlLDmd6ZJOQKeAAgZnpFc6Af0CChiWkY7pBHQNKGBARvqmE9A7oICmGemeTsCEgAIaZWRGOgFzAgowz8ikdAKmBRToPE5MSjKvm05mBtSp/MhJjsngaMoZHlA5CTFZEk05iwIq1/VIP0JSFubSlaUBdYUaHo02N1OBJwQEQhAQCEFAIAQBgRAEBEIQEAhBQCAEAYEQBARCEBAIQUAgBAGBEAQEQhAQCEFAIAQBgRAEBEIQEAhBQCAEAYEQBARC/geDiohI6psHxQAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
 <style>
-:root{--primary:#1e40af;--pl:#3b82f6;--bg:#eef2f7;--card:#fff;--text:#0f172a;--muted:#64748b;--danger:#ef4444;--ok:#16a34a;--warn:#f59e0b;--border:#e2e8f0}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text)}
-#intro{position:fixed;inset:0;z-index:1000;background:#0f172a;display:flex}
-#intro .p{flex:1;display:none;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:40px}
-#intro .p.on{display:flex}
-#intro .sig{font-size:120px;text-shadow:0 0 50px rgba(59,130,246,.7)}
-#intro .lb{margin-top:24px;letter-spacing:4px;text-transform:uppercase;opacity:.75;font-size:16px}
-#intro .a{font-size:18px;opacity:.9}
-#intro .b{font-size:16px;opacity:.8;margin:10px 0 18px}
-#intro .c{font-size:36px;font-weight:800;line-height:1.3}
-#shell{display:none;flex-direction:column;height:100%;height:100dvh}
-#shell.show{display:flex}
-#hdr{flex:0 0 auto;background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;padding:14px 24px;box-shadow:0 4px 16px rgba(30,64,175,.28);z-index:20}
-#hdr .row{display:flex;align-items:center;gap:16px;max-width:1200px;margin:0 auto}
-#back{width:44px;height:44px;border:0;border-radius:12px;background:rgba(255,255,255,.22);color:#fff;font-size:28px;cursor:pointer;flex-shrink:0;line-height:1}
-#back:hover{background:rgba(255,255,255,.35)}
-#back:disabled{opacity:.25;pointer-events:none}
-#hdr .txt{flex:1;min-width:0}
-#hdr .sk{font-size:13px;opacity:.9}
-#hdr .pr{font-size:12px;opacity:.8}
-#hdr .ti{font-size:20px;font-weight:800;margin-top:2px}
-#hdr .su{font-size:13px;opacity:.85;margin-top:2px}
-#main{flex:1 1 auto;overflow-y:auto;position:relative}
-#nav{flex:0 0 auto;display:grid;grid-template-columns:repeat(6,1fr);background:#fff;border-top:1px solid var(--border);min-height:64px;z-index:20;box-shadow:0 -4px 20px rgba(0,0,0,.06)}
-#nav button{border:0;background:transparent;color:var(--muted);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:10px 4px;font-size:11px;font-weight:700;width:100%;transition:.15s}
-#nav button:hover{background:#f8fafc;color:var(--primary)}
-#nav button .ic{font-size:20px}
-#nav button.act{color:var(--primary);background:#eff6ff}
-#nav button.sv{color:var(--ok)}
-#nav button.cl{color:var(--danger)}
-.wrap{max-width:1100px;margin:0 auto;padding:24px 20px}
-.page{display:none}
-.page.on{display:block}
-.grid-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;transition:.15s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.card:hover{border-color:var(--pl);box-shadow:0 8px 24px rgba(30,64,175,.12);transform:translateY(-2px)}
-.ci{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;background:#eef2ff;flex-shrink:0}
-.ci.m{background:#dbeafe}
-.ci.c{background:#fef3c7}
-.ci.a{background:#e0e7ff}
-.cn{font-weight:700;font-size:17px}
-.cd{font-size:13px;color:var(--muted);margin-top:4px}
-.ca{margin-left:auto;color:#94a3b8;font-size:22px}
-.lab{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin:0 0 10px}
-.box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:20px}
-.tb{display:flex;flex-wrap:wrap;gap:10px}
-.btn{padding:11px 18px;border:0;border-radius:10px;font-weight:600;font-size:14px;color:#fff;cursor:pointer}
-.btn:hover{filter:brightness(.95)}
-.bp{background:var(--pl)}
-.bw{background:var(--warn)}
-.bd{background:var(--danger)}
-.bs{background:var(--ok)}
-.bg{background:#64748b}
-.bv{background:#8b5cf6}
-.hid{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
-.sb{margin-bottom:16px}
-.sb input{width:100%;max-width:480px;padding:12px 16px;border:1px solid var(--border);border-radius:12px;font-size:15px;background:#fff}
+:root{
+  --primary:#1e40af;--pl:#3b82f6;--bg:#f4f7fc;--card:#fff;--text:#0f172a;--muted:#64748b;
+  --danger:#ef4444;--ok:#16a34a;--warn:#f59e0b;
+  --st:env(safe-area-inset-top,0px);--sb:env(safe-area-inset-bottom,0px);
+  --hh:76px;--nh:66px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text)}
+body{padding-top:calc(var(--hh)+var(--st));padding-bottom:calc(var(--nh)+var(--sb))}
+
+/* ALWAYS fixed chrome after intro */
+#chromeHeader{
+  position:fixed!important;top:0;left:0;right:0;z-index:10000;
+  background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;
+  padding:calc(8px + var(--st)) 12px 10px;
+  min-height:calc(var(--hh)+var(--st));
+  box-shadow:0 4px 14px rgba(30,64,175,.35);
+  display:none;
+}
+#chromeHeader.on{display:block!important}
+#chromeHeader .row{display:flex;align-items:center;gap:10px}
+#backBtn{
+  width:42px;height:42px;border:none;border-radius:12px;background:rgba(255,255,255,.25);
+  color:#fff;font-size:26px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+}
+#backBtn:active{background:rgba(255,255,255,.45)}
+#backBtn.hide{opacity:.25;pointer-events:none}
+#chromeHeader .ht{flex:1;min-width:0}
+#chromeHeader .sk{font-size:12px;opacity:.9}
+#chromeHeader .pr{font-size:11px;opacity:.8}
+#chromeHeader .ti{font-size:16px;font-weight:800;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#chromeHeader .su{font-size:12px;opacity:.85;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+#chromeNav{
+  position:fixed!important;bottom:0;left:0;right:0;z-index:10000;
+  height:calc(var(--nh)+var(--sb));padding-bottom:var(--sb);
+  background:#fff;border-top:1px solid #e2e8f0;
+  display:none;grid-template-columns:repeat(6,1fr);align-items:center;
+  box-shadow:0 -4px 16px rgba(0,0,0,.1);
+}
+#chromeNav.on{display:grid!important}
+#chromeNav button{
+  border:none;background:transparent;color:var(--muted);cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;
+  font-size:9px;font-weight:700;width:100%;
+}
+#chromeNav button .ic{font-size:18px;line-height:1}
+#chromeNav button.act{color:var(--primary)}
+#chromeNav button.sv{color:var(--ok)}
+#chromeNav button.cl{color:var(--danger)}
+
+.intro{position:fixed;inset:0;z-index:20000;background:#0f172a}
+.isc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity .65s}
+.isc.on{opacity:1}
+.sg{background:linear-gradient(160deg,#0f172a,#1e3a8a 50%,#1e40af)}
+.sg .sym{font-size:96px;color:#fff;text-shadow:0 0 40px rgba(59,130,246,.6)}
+.sg .lb{margin-top:24px;color:rgba(255,255,255,.7);letter-spacing:3px;text-transform:uppercase;font-size:14px}
+.hd{background:linear-gradient(160deg,#1e40af,#3b82f6);color:#fff;text-align:center;padding:40px}
+.hd .a{font-size:15px;opacity:.9}.hd .b{font-size:14px;opacity:.8;margin:8px 0 16px}.hd .c{font-size:26px;font-weight:800;line-height:1.3}
+
+.view{display:none}.view.on{display:block}
+.pad{padding:14px;max-width:640px;margin:0 auto}
+.card{background:var(--card);border:1px solid #e2e8f0;border-radius:16px;padding:16px;display:flex;align-items:center;gap:14px;margin-bottom:10px;cursor:pointer}
+.card:active{transform:scale(.98)}
+.ci{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;background:#eef2ff;flex-shrink:0}
+.ci.m{background:#dbeafe}.ci.c{background:#fef3c7}.ci.a{background:#e0e7ff}
+.cn{font-weight:700;font-size:15px}.cd{font-size:12px;color:var(--muted);margin-top:2px}
+.ca{margin-left:auto;color:var(--muted);font-size:20px}
+.box{background:var(--card);border:1px solid #e2e8f0;border-radius:14px;padding:14px;margin-bottom:14px}
+.lab{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
+.tb{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tb .f{grid-column:1/-1}
+.btn{padding:12px;border:none;border-radius:10px;font-weight:700;font-size:13px;color:#fff;cursor:pointer}
+.bp{background:var(--pl)}.bw{background:var(--warn)}.bd{background:var(--danger)}.bs{background:var(--ok)}
+.hid{display:none}
+.sb{margin-bottom:12px}
+.sb input{width:100%;padding:12px 14px;border:1px solid #e2e8f0;border-radius:12px;font-size:15px}
 .sb input:focus{outline:none;border-color:var(--pl);box-shadow:0 0 0 3px rgba(59,130,246,.2)}
-.list{display:flex;flex-direction:column;gap:10px}
-.item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:.12s}
-.item:hover{border-color:var(--pl);background:#f8fbff}
-.item .nm{flex:1;font-weight:600;font-size:16px;word-break:break-word}
-.item .mt{font-size:12px;color:var(--muted);margin-top:3px;font-weight:500}
-.item .badge{font-size:11px;background:#e2e8f0;padding:3px 10px;border-radius:8px;color:var(--muted);flex-shrink:0}
-.item .dl{border:0;background:none;font-size:16px;cursor:pointer;opacity:.6;padding:6px}
-.item .dl:hover{opacity:1}
-.empty{text-align:center;padding:48px 20px;color:#94a3b8}
-.empty span{font-size:42px;display:block;margin-bottom:10px}
-.tbl-wrap{margin-top:28px;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
-.tbl-wrap .th{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border);font-weight:700;font-size:15px}
-.tbl-scroll{overflow-x:auto;display:none}
-.tbl-scroll.on{display:block}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th{background:#f8fafc;padding:12px 14px;text-align:left;font-weight:600;white-space:nowrap;border-bottom:2px solid var(--border)}
-td{padding:11px 14px;border-bottom:1px solid #f1f5f9;vertical-align:middle}
-tr:hover td{background:#f8fafc}
-.tip{padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600}
-.tip.h{background:#dbeafe;color:#1e40af}
-.tip.d{background:#fef3c7;color:#92400e}
-.ta{display:flex;gap:6px}
-.ta .btn{padding:6px 12px;font-size:12px}
-#preview{display:none;position:absolute;inset:0;background:#fff;z-index:15;flex-direction:column}
-#preview.on{display:flex}
-#preview iframe{flex:1;width:100%;border:0}
-.toast{position:fixed;bottom:80px;right:24px;background:#1e293b;color:#fff;padding:14px 22px;border-radius:12px;font-size:14px;opacity:0;transition:.25s;z-index:500;max-width:360px;box-shadow:0 8px 24px rgba(0,0,0,.2);pointer-events:none}
-.toast.on{opacity:1}
-@media(max-width:700px){#hdr{padding:12px 14px}#hdr .ti{font-size:16px}.wrap{padding:14px}.grid-cats{grid-template-columns:1fr}#nav button{font-size:9px}#nav button .ic{font-size:17px}}
+.item{background:var(--card);border:1px solid #e2e8f0;border-radius:12px;padding:14px;display:flex;align-items:center;gap:10px;margin-bottom:8px;cursor:pointer}
+.item .nm{flex:1;font-weight:600;font-size:15px;word-break:break-word}
+.item .mt{font-size:11px;color:var(--muted);margin-top:2px;font-weight:500}
+.item .bdg{font-size:11px;background:#e2e8f0;padding:2px 8px;border-radius:8px;color:var(--muted)}
+.item .dl{border:none;background:none;font-size:16px;cursor:pointer;opacity:.65}
+.empty{text-align:center;padding:40px 16px;color:#94a3b8}
+.empty span{font-size:36px;display:block;margin-bottom:8px}
+
+#preview{
+  display:none;position:fixed;
+  top:calc(var(--hh)+var(--st));left:0;right:0;bottom:calc(var(--nh)+var(--sb));
+  z-index:9000;background:#fff;
+}
+#preview.on{display:block}
+#preview iframe{width:100%;height:100%;border:0}
+
+.toast{position:fixed;bottom:calc(var(--nh)+var(--sb)+14px);left:50%;transform:translateX(-50%) translateY(16px);background:#1e293b;color:#fff;padding:12px 18px;border-radius:12px;font-size:14px;opacity:0;transition:.25s;z-index:30000;max-width:90%;text-align:center;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 </style>
 </head>
 <body>
 
-<div id="intro">
-  <div class="p on" id="p1"><div class="sig">∑</div><div class="lb">Математика</div></div>
-  <div class="p" id="p2">
+<div class="intro" id="intro">
+  <div class="isc sg on" id="s1"><div class="sym">∑</div><div class="lb">Математика</div></div>
+  <div class="isc hd" id="s2">
     <div class="a">СОУ „28 Ноември“ – Дебар</div>
     <div class="b">Проф. Решат Маловски</div>
     <div class="c">Платформа за настава<br>по математика</div>
   </div>
 </div>
 
-<div id="shell">
-  <header id="hdr">
-    <div class="row">
-      <button type="button" id="back" disabled title="Назад">‹</button>
-      <div class="txt">
-        <div class="sk">СОУ „28 Ноември“ – Дебар</div>
-        <div class="pr">Проф. Решат Маловски</div>
-        <div class="ti" id="hTitle">Платформа за настава</div>
-        <div class="su" id="hSub">Избери категорија</div>
-      </div>
+<header id="chromeHeader">
+  <div class="row">
+    <button type="button" id="backBtn" class="hide" onclick="goBack()">‹</button>
+    <div class="ht">
+      <div class="sk">СОУ „28 Ноември“ – Дебар</div>
+      <div class="pr">Проф. Решат Маловски</div>
+      <div class="ti" id="hTitle">Платформа за настава</div>
+      <div class="su" id="hSub">Избери категорија</div>
     </div>
-  </header>
-
-  <div id="main">
-    <div class="page on" id="pgCats">
-      <div class="wrap">
-        <div class="sb"><input type="search" id="q1" placeholder="🔍 Пребарај по наслов (почетни букви)…" autocomplete="off"></div>
-        <div class="grid-cats">
-          <div class="card" data-go="math"><div class="ci m">📐</div><div><div class="cn">Математика</div><div class="cd">Поткатегории: подготовка, наставни…</div></div><div class="ca">›</div></div>
-          <div class="card" data-go="class"><div class="ci c">🧑‍🏫</div><div><div class="cn">Класен час</div><div class="cd">Материјали за класен час</div></div><div class="ca">›</div></div>
-          <div class="card" data-go="all"><div class="ci a">📂</div><div><div class="cn">Сите датотеки</div><div class="cd">Преглед на сè</div></div><div class="ca">›</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="page" id="pgSubs">
-      <div class="wrap">
-        <div class="grid-cats">
-          <div class="card" data-sub="podgotovka"><div class="ci">📝</div><div><div class="cn">Подготовка за настава</div></div><div class="ca">›</div></div>
-          <div class="card" data-sub="nastavni"><div class="ci">📚</div><div><div class="cn">Наставни активности</div></div><div class="ca">›</div></div>
-          <div class="card" data-sub="vonnastavni"><div class="ci">🏫</div><div><div class="cn">Воннаставни активности</div></div><div class="ca">›</div></div>
-          <div class="card" data-sub="drugo"><div class="ci">📌</div><div><div class="cn">Друго</div></div><div class="ca">›</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="page" id="pgList">
-      <div class="wrap">
-        <div class="lab">Управување</div>
-        <div class="box">
-          <div class="tb">
-            <button type="button" class="btn bp" id="bHtml">📄 Увези HTML</button>
-            <button type="button" class="btn bw" id="bDoc">📎 Увези документ</button>
-            <button type="button" class="btn bs" id="bJson">📥 Увези JSON</button>
-            <button type="button" class="btn bg" id="bSave">💾 Зачувај JSON</button>
-            <button type="button" class="btn bv" id="bTbl">📋 Табела</button>
-            <button type="button" class="btn bd" id="bClear">🗑 Избриши листа</button>
-          </div>
-        </div>
-        <div class="lab">Наслови</div>
-        <div class="sb"><input type="search" id="q2" placeholder="🔍 Пребарај по наслов (почетни букви)…" autocomplete="off"></div>
-        <div class="list" id="list"></div>
-
-        <div class="tbl-wrap">
-          <div class="th"><span>📋 Сите датотеки <small id="cntAll" style="font-weight:500;color:#64748b"></small></span>
-            <button type="button" class="btn bg" style="padding:6px 12px;font-size:12px" id="bTbl2">Прикажи/Сокриј</button>
-          </div>
-          <div class="tbl-scroll" id="tblScroll">
-            <table>
-              <thead><tr><th>#</th><th>Наслов</th><th>Тип</th><th>Категорија</th><th>Датум</th><th>Акции</th></tr></thead>
-              <tbody id="tbody"></tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="preview"><iframe id="frame" title="Преглед"></iframe></div>
   </div>
+</header>
 
-  <nav id="nav">
-    <button type="button" data-n="home"><span class="ic">🏠</span>Главно</button>
-    <button type="button" data-n="math"><span class="ic">📐</span>Математика</button>
-    <button type="button" data-n="class"><span class="ic">🧑‍🏫</span>Класен час</button>
-    <button type="button" data-n="all"><span class="ic">📂</span>Сите</button>
-    <button type="button" class="sv" data-n="save"><span class="ic">💾</span>Зачувај</button>
-    <button type="button" class="cl" data-n="close"><span class="ic">✕</span>Затвори</button>
-  </nav>
+<div class="view on" id="vCats">
+  <div class="pad">
+    <div class="sb"><input type="search" id="q1" placeholder="🔍 Пребарај по наслов (почетни букви)…" autocomplete="off"></div>
+    <div class="card" onclick="openCat('matematika')"><div class="ci m">📐</div><div><div class="cn">Математика</div><div class="cd">Поткатегории</div></div><div class="ca">›</div></div>
+    <div class="card" onclick="openCat('klasen-cas')"><div class="ci c">🧑‍🏫</div><div><div class="cn">Класен час</div><div class="cd">Материјали</div></div><div class="ca">›</div></div>
+    <div class="card" onclick="openCat('site')"><div class="ci a">📂</div><div><div class="cn">Сите датотеки</div><div class="cd">Преглед на сè</div></div><div class="ca">›</div></div>
+  </div>
 </div>
 
-<input type="file" id="fHtml" class="hid" accept=".html,.htm" multiple>
-<input type="file" id="fDoc" class="hid" accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.md" multiple>
-<input type="file" id="fJson" class="hid" accept=".json,application/json">
+<div class="view" id="vSubs">
+  <div class="pad">
+    <div class="card" onclick="openSub('podgotovka')"><div class="ci">📝</div><div><div class="cn">Подготовка за настава</div></div><div class="ca">›</div></div>
+    <div class="card" onclick="openSub('nastavni')"><div class="ci">📚</div><div><div class="cn">Наставни активности</div></div><div class="ca">›</div></div>
+    <div class="card" onclick="openSub('vonnastavni')"><div class="ci">🏫</div><div><div class="cn">Воннаставни активности</div></div><div class="ca">›</div></div>
+    <div class="card" onclick="openSub('drugo')"><div class="ci">📌</div><div><div class="cn">Друго</div></div><div class="ca">›</div></div>
+  </div>
+</div>
+
+<div class="view" id="vList">
+  <div class="pad">
+    <div class="lab">Управување</div>
+    <div class="box">
+      <div class="tb">
+        <button type="button" class="btn bp" onclick="document.getElementById('fHtml').click()">📄 HTML</button>
+        <button type="button" class="btn bw" onclick="document.getElementById('fDoc').click()">📎 Документ</button>
+        <button type="button" class="btn bs f" onclick="document.getElementById('fJson').click()">📥 Увези JSON база</button>
+        <button type="button" class="btn bd f" onclick="clearList()">🗑 Избриши листа</button>
+      </div>
+      <input type="file" id="fHtml" class="hid" accept=".html,.htm" multiple>
+      <input type="file" id="fDoc" class="hid" accept=".pdf,.doc,.docx,.txt,.md" multiple>
+      <input type="file" id="fJson" class="hid" accept=".json,application/json">
+    </div>
+    <div class="lab">Наслови</div>
+    <div class="sb"><input type="search" id="q2" placeholder="🔍 Пребарај по наслов (почетни букви)…" autocomplete="off"></div>
+    <div id="list"></div>
+  </div>
+</div>
+
+<div id="preview"><iframe id="frame" src="about:blank"></iframe></div>
+
+<nav id="chromeNav">
+  <button type="button" data-n="home" onclick="goHome()"><span class="ic">🏠</span>Главно</button>
+  <button type="button" data-n="math" onclick="openCat('matematika')"><span class="ic">📐</span>Матем.</button>
+  <button type="button" data-n="class" onclick="openCat('klasen-cas')"><span class="ic">🧑‍🏫</span>Класен</button>
+  <button type="button" data-n="all" onclick="openCat('site')"><span class="ic">📂</span>Сите</button>
+  <button type="button" class="sv" data-n="save" onclick="saveDB()"><span class="ic">💾</span>Зачувај</button>
+  <button type="button" class="cl" data-n="close" onclick="closeApp()"><span class="ic">✕</span>Затвори</button>
+</nav>
+
 <div class="toast" id="toast"></div>
 
 <script>
 (function(){
-  var KEY="edu_db_v3", SNAP="edu_snap_v3";
-  var SUBL={podgotovka:"Подготовка за настава",nastavni:"Наставни активности",vonnastavni:"Воннаставни активности",drugo:"Друго"};
-  var MAX={podgotovka:10,nastavni:30,vonnastavni:10,drugo:10,klasen:10};
-  var cat="site", sub=null, q="", page="pgCats", preview=false, tblOn=false;
+var KEY="edu_nastava_db_v2";
+var SNAP="edu_nastava_snap_v2";
+var SUBL={podgotovka:"Подготовка за настава",nastavni:"Наставни активности",vonnastavni:"Воннаставни активности",drugo:"Друго"};
+var MAX={podgotovka:10,nastavni:30,vonnastavni:10,drugo:10,klasen:10};
 
-  function toast(m){var t=document.getElementById("toast");t.textContent=m;t.classList.add("on");clearTimeout(t._x);t._x=setTimeout(function(){t.classList.remove("on")},2800)}
-  function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
-  function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8)}
-  function fmt(iso){try{return new Date(iso).toLocaleString("mk-MK")}catch(e){return ""}}
+var cat="site", sub=null, q="", view="vCats", prev=false;
 
-  function load(){
-    try{var r=localStorage.getItem(KEY);if(r){var a=JSON.parse(r);if(Array.isArray(a))return a}}catch(e){}
-    try{var s=localStorage.getItem(SNAP);if(s){var b=JSON.parse(s);if(Array.isArray(b)&&b.length){localStorage.setItem(KEY,s);return b}}}catch(e){}
-    return [];
-  }
-  function setAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
-  function all(){return load()}
+function toast(m){
+  var t=document.getElementById("toast");
+  t.textContent=m; t.classList.add("on");
+  clearTimeout(t._t); t._t=setTimeout(function(){t.classList.remove("on")},2800);
+}
+function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
 
-  function seed(){
-    if(all().length) return;
-    setAll([
-      {id:uid(),naslov:"Геометриски фигури - вовед",htmlContent:"<!DOCTYPE html><html><head><meta charset=utf-8><title>Геометрија</title></head><body style='font-family:sans-serif;padding:40px;background:#f0f9ff'><h1>📐 Геометриски фигури</h1><p>Вовед</p></body></html>",datum:new Date().toISOString(),kategorija:"matematika",subkategorija:"podgotovka"},
-      {id:uid(),naslov:"Квадратни равенки",htmlContent:"<!DOCTYPE html><html><head><meta charset=utf-8><title>Квадратни</title></head><body style='font-family:sans-serif;padding:40px;background:#f0fdf4'><h1>Квадратни равенки</h1><p style='font-size:22px'>ax² + bx + c = 0</p></body></html>",datum:new Date(Date.now()-864e5).toISOString(),kategorija:"matematika",subkategorija:"nastavni"},
-      {id:uid(),naslov:"Питагорова теорема",htmlContent:"<!DOCTYPE html><html><head><meta charset=utf-8><title>Питагора</title></head><body style='font-family:sans-serif;padding:40px;background:#f0fdf4'><h1>Питагорова теорема</h1><p style='font-size:24px'>a² + b² = c²</p></body></html>",datum:new Date(Date.now()-1728e5).toISOString(),kategorija:"matematika",subkategorija:"vonnastavni"},
-      {id:uid(),naslov:"Родителска средба",htmlContent:"<!DOCTYPE html><html><head><meta charset=utf-8><title>Родителска</title></head><body style='font-family:sans-serif;padding:40px;background:#fef2f2'><h1>Родителска средба</h1></body></html>",datum:new Date(Date.now()-3456e5).toISOString(),kategorija:"klasen-cas",subkategorija:null}
-    ]);
-  }
+/* ===== STORAGE – never wiped by navigation ===== */
+function load(){
+  try{
+    var r=localStorage.getItem(KEY);
+    if(r){ var a=JSON.parse(r); if(Array.isArray(a)) return a; }
+  }catch(e){}
+  try{
+    var s=localStorage.getItem(SNAP);
+    if(s){ var b=JSON.parse(s); if(Array.isArray(b)&&b.length){ localStorage.setItem(KEY,s); return b; } }
+  }catch(e){}
+  return [];
+}
+function save(arr){
+  // Always write full array; never delete key on navigation
+  localStorage.setItem(KEY, JSON.stringify(arr));
+}
+function getAll(){ return load(); }
+function setAll(arr){ save(arr); }
 
-  function setHdr(title, subtxt, canBack){
-    document.getElementById("hTitle").textContent=title;
-    document.getElementById("hSub").textContent=subtxt||"";
-    document.getElementById("back").disabled=!canBack;
-  }
-  function setNav(n){
-    document.querySelectorAll("#nav button").forEach(function(b){b.classList.toggle("act", b.getAttribute("data-n")===n)});
-  }
-  function showPage(id){
-    document.querySelectorAll(".page").forEach(function(p){p.classList.remove("on")});
-    document.getElementById(id).classList.add("on");
-    page=id; closePreview(true); document.getElementById("main").scrollTop=0;
-  }
+function seedIfEmpty(){
+  if(getAll().length) return;
+  setAll([
+    {id:uid(),naslov:"Геометриски фигури - вовед",htmlContent:"<!DOCTYPE html><html><head><meta charset=utf-8><title>Геометрија</title></head><body style='font-family:sans-serif;padding:40px;background:#f0f9ff'><h1>📐 Геометриски фигури</h1><p>Вовед</p></body></html>",datum:new Date().toISOString(),kategorija:"matematika",subkategorija:"podgotovka"},
+    {id:uid(),naslov:"Квадратни равенки",htmlContent:"<!DOCTYPE html><html><head><meta charset=utf-8><title>Квадратни</title></head><body style='font-family:sans-serif;padding:40px;background:#f0fdf4'><h1>📐 Квадратни равенки</h1><p style='font-size:22px'>ax² + bx + c = 0</p></body></html>",datum:new Date(Date.now()-864e5).toISOString(),kategorija:"matematika",subkategorija:"nastavni"},
+    {id:uid(),naslov:"Родителска средба",htmlContent:"<!DOCTYPE html><html><head><meta charset=utf-8><title>Родителска</title></head><body style='font-family:sans-serif;padding:40px;background:#fef2f2'><h1>👪 Родителска средба</h1></body></html>",datum:new Date(Date.now()-1728e5).toISOString(),kategorija:"klasen-cas",subkategorija:null}
+  ]);
+}
 
-  function home(){
-    cat="site"; sub=null; q="";
-    document.getElementById("q1").value=""; document.getElementById("q2").value="";
-    setHdr("Платформа за настава","Избери категорија", false); setNav("home"); showPage("pgCats");
-  }
-  function back(){
-    if(preview){ closePreview(false); return; }
-    if(page==="pgList"){ if(q){home();return} if(cat==="matematika"){openCat("math");return} home(); return; }
-    if(page==="pgSubs"){ home(); return; }
-    home();
-  }
-  function openCat(which){
-    q=""; document.getElementById("q2").value="";
-    if(which==="math"){ cat="matematika"; sub=null; setHdr("Математика","Избери поткатегорија", true); setNav("math"); showPage("pgSubs"); }
-    else if(which==="class"){ cat="klasen-cas"; sub=null; setNav("class"); openList(); }
-    else { cat="site"; sub=null; setNav("all"); openList(); }
-  }
-  function openSub(s){ cat="matematika"; sub=s; q=""; document.getElementById("q2").value=""; setNav("math"); openList(); }
-  function openList(){
-    var t,s;
-    if(q){ t="Пребарување"; s='Почнува со „'+q+'“'; }
-    else if(cat==="matematika"){ t="Математика"; s=sub?(SUBL[sub]||sub):"Сите"; }
-    else if(cat==="klasen-cas"){ t="Класен час"; s="Документи"; }
-    else { t="Сите датотеки"; s="Документи"; }
-    setHdr(t,s,true); render(); showPage("pgList");
-  }
+function header(title, subtxt, back){
+  document.getElementById("hTitle").textContent=title;
+  document.getElementById("hSub").textContent=subtxt||"";
+  var b=document.getElementById("backBtn");
+  if(back) b.classList.remove("hide"); else b.classList.add("hide");
+}
+function navAct(n){
+  document.querySelectorAll("#chromeNav button").forEach(function(x){x.classList.remove("act")});
+  var el=document.querySelector('#chromeNav button[data-n="'+n+'"]');
+  if(el) el.classList.add("act");
+}
+function showView(id){
+  document.querySelectorAll(".view").forEach(function(v){v.classList.remove("on")});
+  document.getElementById(id).classList.add("on");
+  view=id;
+  closePrev(true);
+  window.scrollTo(0,0);
+}
 
-  function filtered(){
-    var data=all(), qq=(q||"").trim().toLowerCase(), out;
-    if(qq) out=data.filter(function(it){return (it.naslov||"").toLowerCase().trim().indexOf(qq)===0});
-    else if(cat==="matematika") out=data.filter(function(it){return it.kategorija==="matematika"&&(!sub||it.subkategorija===sub)});
-    else if(cat==="klasen-cas") out=data.filter(function(it){return it.kategorija==="klasen-cas"});
-    else out=data.slice();
-    return out.sort(function(a,b){return new Date(b.datum)-new Date(a.datum)});
+function goHome(){
+  cat="site"; sub=null; q="";
+  document.getElementById("q1").value="";
+  document.getElementById("q2").value="";
+  header("Платформа за настава","Избери категорија", false);
+  navAct("home");
+  showView("vCats");
+}
+function goBack(){
+  if(prev){ closePrev(false); return; }
+  if(view==="vList"){
+    if(q){ goHome(); return; }
+    if(cat==="matematika"){ openCat("matematika"); return; }
+    goHome(); return;
   }
-  function doSearch(raw){
-    q=(raw||"").trim().toLowerCase();
-    var v=raw||"";
-    document.getElementById("q1").value=v; document.getElementById("q2").value=v;
-    if(q) openList(); else if(page==="pgList") openList();
-  }
+  if(view==="vSubs"){ goHome(); return; }
+  goHome();
+}
 
-  function render(){
-    var box=document.getElementById("list"), items=filtered();
-    if(!items.length){
-      box.innerHTML='<div class="empty"><span>📭</span>'+(q?'Нема наслов што почнува со „'+esc(q)+'“.':'Нема документи во оваа листа.')+'</div>';
-    } else {
-      var h="";
-      items.forEach(function(it){
-        var tip=it.htmlContent?"HTML":"Док";
-        var meta=it.kategorija==="matematika"?("Математика"+(it.subkategorija?" · "+(SUBL[it.subkategorija]||""):"")):(it.kategorija==="klasen-cas"?"Класен час":"");
-        h+='<div class="item" data-id="'+it.id+'"><div class="nm">'+esc(it.naslov)+(meta?'<div class="mt">'+esc(meta)+'</div>':'')+'</div><span class="badge">'+tip+'</span><button type="button" class="dl" data-del="'+it.id+'">🗑</button></div>';
-      });
-      box.innerHTML=h;
-    }
-    renderTable();
+function openCat(c){
+  // DO NOT touch storage / data
+  cat=c; sub=null; q="";
+  document.getElementById("q2").value="";
+  if(c==="matematika"){
+    header("Математика","Избери поткатегорија", true);
+    navAct("math");
+    showView("vSubs");
+  } else if(c==="klasen-cas"){
+    navAct("class");
+    openList();
+  } else {
+    navAct("all");
+    openList();
   }
+}
+function openSub(s){
+  cat="matematika"; sub=s; q="";
+  document.getElementById("q2").value="";
+  navAct("math");
+  openList();
+}
+function openList(){
+  var t,s;
+  if(q){ t="Пребарување"; s='Наслови што почнуваат со „'+q+'“'; }
+  else if(cat==="matematika"){ t="Математика"; s=sub?(SUBL[sub]||sub):"Сите"; }
+  else if(cat==="klasen-cas"){ t="Класен час"; s="Документи"; }
+  else { t="Сите датотеки"; s="Документи"; }
+  header(t,s,true);
+  render();
+  showView("vList");
+}
 
-  function renderTable(){
-    var data=all().slice().sort(function(a,b){return new Date(b.datum)-new Date(a.datum)});
-    document.getElementById("cntAll").textContent="("+data.length+")";
-    var tb=document.getElementById("tbody");
-    if(!data.length){ tb.innerHTML='<tr><td colspan="6" style="text-align:center;padding:28px;color:#94a3b8">Нема датотеки</td></tr>'; return; }
-    var h="";
-    data.forEach(function(it,i){
-      var isH=!!it.htmlContent;
-      var kat=it.kategorija==="matematika"?"📐 Математика":"🧑‍🏫 Класен час";
-      var su=it.subkategorija?(SUBL[it.subkategorija]||""):"";
-      h+='<tr><td>'+(i+1)+'</td><td><strong>'+esc(it.naslov)+'</strong></td><td><span class="tip '+(isH?"h":"d")+'">'+(isH?"HTML":"Док")+'</span></td><td>'+kat+(su?'<div style="font-size:11px;color:#64748b">'+esc(su)+'</div>':'')+'</td><td>'+fmt(it.datum)+'</td><td class="ta"><button type="button" class="btn bp" data-id="'+it.id+'">👁</button><button type="button" class="btn bd" data-del="'+it.id+'">🗑</button></td></tr>';
+/* SEARCH: only titles that START WITH query (case-insensitive), across all cats when searching */
+function filtered(){
+  var all=getAll();
+  var qq=(q||"").trim().toLowerCase();
+  var out;
+  if(qq){
+    out=all.filter(function(it){
+      var name=(it.naslov||"").toLowerCase().trim();
+      return name.indexOf(qq)===0; // starts with
     });
-    tb.innerHTML=h;
+  } else if(cat==="matematika"){
+    out=all.filter(function(it){
+      return it.kategorija==="matematika" && (!sub || it.subkategorija===sub);
+    });
+  } else if(cat==="klasen-cas"){
+    out=all.filter(function(it){ return it.kategorija==="klasen-cas"; });
+  } else {
+    out=all.slice();
   }
-  function toggleTbl(){
-    tblOn=!tblOn;
-    document.getElementById("tblScroll").classList.toggle("on", tblOn);
-    if(tblOn) renderTable();
+  return out.sort(function(a,b){ return new Date(b.datum)-new Date(a.datum); });
+}
+
+function doSearch(raw, from){
+  q=(raw||"").trim().toLowerCase();
+  var v=raw||"";
+  if(from!=="q1") document.getElementById("q1").value=v;
+  if(from!=="q2") document.getElementById("q2").value=v;
+  if(q) openList();
+  else if(view==="vList") openList();
+  else render();
+}
+
+function render(){
+  var box=document.getElementById("list");
+  if(!box) return;
+  var items=filtered();
+  if(!items.length){
+    box.innerHTML='<div class="empty"><span>📭</span>'+(q?'Нема наслов што почнува со „'+esc(q)+'“.':'Нема документи во оваа листа.')+'</div>';
+    return;
   }
+  var h="";
+  for(var i=0;i<items.length;i++){
+    var it=items[i];
+    var tip=it.htmlContent?"HTML":"Док";
+    var meta="";
+    if(it.kategorija==="matematika") meta="Математика"+(it.subkategorija?" · "+(SUBL[it.subkategorija]||""):"");
+    else if(it.kategorija==="klasen-cas") meta="Класен час";
+    h+='<div class="item" data-id="'+it.id+'"><div class="nm">'+esc(it.naslov)+(meta?'<div class="mt">'+esc(meta)+'</div>':'')+'</div><span class="bdg">'+tip+'</span><button type="button" class="dl" data-del="'+it.id+'">🗑</button></div>';
+  }
+  box.innerHTML=h;
+}
 
-  function openDoc(id){
-    var it=all().filter(function(x){return x.id===id})[0];
-    if(!it){ toast("Нема документ"); return; }
-    setHdr(it.naslov||"Преглед","Преглед на документ", true);
-    preview=true;
-    var fr=document.getElementById("frame");
+document.addEventListener("click", function(e){
+  var d=e.target.closest("[data-del]");
+  if(d){ e.preventDefault(); e.stopPropagation(); delOne(d.getAttribute("data-del")); return; }
+  var it=e.target.closest(".item[data-id]");
+  if(it) openDoc(it.getAttribute("data-id"));
+});
 
-    if(it.htmlContent){
-      var u=URL.createObjectURL(new Blob([it.htmlContent],{type:"text/html;charset=utf-8"}));
-      fr.src=u;
-      document.getElementById("preview").classList.add("on");
-      setTimeout(function(){try{URL.revokeObjectURL(u)}catch(e){}},120000);
-      return;
-    }
-
-    if(it.fileData){
-      try{
-        var bin=atob(it.fileData);
-        var bytes=new Uint8Array(bin.length);
-        for(var i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
-        var blob=new Blob([bytes],{type:it.fileType||"application/octet-stream"});
-        var url=URL.createObjectURL(blob);
-
-        if((it.fileType||"").indexOf("pdf")>=0){
-          fr.src=url;
-          document.getElementById("preview").classList.add("on");
-          setTimeout(function(){try{URL.revokeObjectURL(url)}catch(e){}},120000);
-          return;
-        }
-
-        var a=document.createElement("a");
-        a.href=url;
-        a.download=it.fileName||it.naslov||"документ";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        setTimeout(function(){try{URL.revokeObjectURL(url)}catch(e){}},5000);
-        toast("📥 Преземање: "+it.naslov);
-        preview=false;
-        document.getElementById("preview").classList.remove("on");
-        fr.src="about:blank";
-        return;
-      }catch(e){
-        toast("Грешка при читање на документ");
-        preview=false;
-        document.getElementById("preview").classList.remove("on");
-        return;
+function openDoc(id){
+  var all=getAll(), it=null;
+  for(var i=0;i<all.length;i++) if(all[i].id===id){ it=all[i]; break; }
+  if(!it){ toast("Нема документ"); return; }
+  header(it.naslov||"Преглед","Преглед на документ", true);
+  prev=true;
+  var fr=document.getElementById("frame");
+  if(it.htmlContent){
+    var url=URL.createObjectURL(new Blob([it.htmlContent],{type:"text/html;charset=utf-8"}));
+    fr.src=url;
+    setTimeout(function(){try{URL.revokeObjectURL(url)}catch(e){}},120000);
+  } else if(it.fileData){
+    try{
+      var bin=atob(it.fileData), bytes=new Uint8Array(bin.length);
+      for(var i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
+      var blob=new Blob([bytes],{type:it.fileType||"application/octet-stream"});
+      if((it.fileType||"").indexOf("pdf")>=0) fr.src=URL.createObjectURL(blob);
+      else {
+        var a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=it.fileName||"doc"; a.click();
+        toast("Преземање…"); prev=false; return;
       }
-    }
-
-    toast("Нема содржина");
-    preview=false;
-    document.getElementById("preview").classList.remove("on");
+    }catch(e){ toast("Грешка"); prev=false; return; }
+  } else { toast("Нема содржина"); prev=false; return; }
+  document.getElementById("preview").classList.add("on");
+}
+function closePrev(silent){
+  prev=false;
+  document.getElementById("preview").classList.remove("on");
+  document.getElementById("frame").src="about:blank";
+  if(!silent){
+    if(view==="vList") openList();
+    else if(view==="vSubs") header("Математика","Избери поткатегорија", true);
+    else header("Платформа за настава","Избери категорија", false);
   }
+}
 
-  function closePreview(silent){
-    preview=false;
-    document.getElementById("preview").classList.remove("on");
-    document.getElementById("frame").src="about:blank";
-    if(!silent){
-      if(page==="pgList") openList();
-      else if(page==="pgSubs") setHdr("Математика","Избери поткатегорија", true);
-      else setHdr("Платформа за настава","Избери категорија", false);
-    }
-  }
+function saveDB(){
+  var data=getAll();
+  localStorage.setItem(SNAP, JSON.stringify(data));
+  localStorage.setItem(KEY, JSON.stringify(data));
+  var blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json;charset=utf-8"});
+  var a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="nastava-data.json";
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  toast("💾 Зачувано ("+data.length+") + преземен JSON за GitHub");
+}
 
-  function saveDB(){
-    var data=all();
-    localStorage.setItem(SNAP, JSON.stringify(data));
-    localStorage.setItem(KEY, JSON.stringify(data));
-    var a=document.createElement("a");
-    a.href=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:"application/json"}));
-    a.download="nastava-data.json";
-    document.body.appendChild(a); a.click(); document.body.removeChild(a);
-    toast("💾 Зачувано ("+data.length+") + JSON");
-  }
-  function closeApp(){
-    try { sessionStorage.clear(); } catch(e){}
-    try { var fr=document.getElementById("frame"); if(fr) fr.src="about:blank"; } catch(e){}
-    var isStandalone = false;
-    try {
-      isStandalone = window.matchMedia("(display-mode: standalone)").matches
-        || window.matchMedia("(display-mode: fullscreen)").matches
-        || window.navigator.standalone === true;
-    } catch(e){}
+function closeApp(){
+  toast("Затворање…");
+  try{ window.close(); }catch(e){}
+  setTimeout(function(){
+    document.documentElement.innerHTML='<body style="margin:0;background:#0f172a;color:#fff;font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;text-align:center"><div><div style="font-size:48px">∑</div><h2>Апликацијата е затворена</h2><p style="opacity:.7">Затвори го јазичето</p></div></body>';
+  },250);
+}
 
-    try { window.open("", "_self"); } catch(e){}
-    try { window.close(); } catch(e){}
-    try { if (window.opener) { window.opener = null; window.close(); } } catch(e){}
-    try { if (typeof navigator !== "undefined" && navigator.app && typeof navigator.app.exitApp === "function") { navigator.app.exitApp(); } } catch(e){}
+function countIn(k,s){
+  return getAll().filter(function(i){ return i.kategorija===k && (s?i.subkategorija===s:true); }).length;
+}
 
-    setTimeout(function(){
-      try { window.close(); } catch(e){}
-      var msg = isStandalone
-        ? "Притисни го копчето <b>Home</b> (○) на телефонот<br>или повлечи нагоре за да ја затвориш апликацијата."
-        : "Затвори го ова јазиче / прозорец.<br>Ако е инсталирана апликација: Home копче на телефонот.";
-
-      document.documentElement.innerHTML =
-        '<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
-        '<style>*{box-sizing:border-box}html,body{margin:0;height:100%;background:#0f172a;color:#fff;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif}' +
-        '.box{min-height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:32px 24px}' +
-        'h1{font-size:22px;margin:16px 0 12px}p{opacity:.8;line-height:1.5;font-size:15px}' +
-        '.sig{font-size:56px}.hint{margin-top:28px;padding:14px 18px;background:rgba(255,255,255,.08);border-radius:14px;font-size:14px;line-height:1.5}' +
-        'button{margin-top:20px;background:#3b82f6;color:#fff;border:0;padding:12px 22px;border-radius:12px;font-weight:700;font-size:15px;cursor:pointer}</style></head>' +
-        '<body><div class="box"><div><div class="sig">∑</div><h1>Апликацијата е затворена</h1>' +
-        '<p>' + msg + '</p>' +
-        '<div class="hint">Од безбедносни причини прелистувачот често не дозволува<br>автоматско враќање на почетен екран.</div>' +
-        '<button type="button" onclick="tryClose()">Обиди се повторно да затвориш</button>' +
-        '</div></div>' +
-        '<script>function tryClose(){try{window.close()}catch(e){}try{window.open("","_self");window.close()}catch(e){}}' +
-        'setInterval(function(){try{window.close()}catch(e){}},800);<\/script></body>';
-    }, 150);
-  }
-
-  function cnt(k,s){return all().filter(function(i){return i.kategorija===k&&(!s||i.subkategorija===s)}).length}
-
-  // ===== ПОПРАВЕНИ ФУНКЦИИ ЗА УВОЗ =====
-
-  function addHtml(files){
-    if(!files || !files.length){
-      toast("❌ Нема избрани датотеки");
-      return;
-    }
-    var k=cat==="site"?"matematika":cat;
-    var s=k==="matematika"?(sub||"podgotovka"):null;
-    var max=k==="matematika"?MAX[s]:MAX.klasen;
-    if(max&&cnt(k,s)>=max){toast("❌ Нема слободни места");return}
-    
-    var data = all();
-    var processed = 0;
-    var errors = [];
-    var total = files.length;
-
-    Array.prototype.forEach.call(files, function(file){
-      var reader = new FileReader();
-      reader.onload = function(e){
-        try{
-          var c = e.target.result;
-          var m = c.match(/<title>([\s\S]*?)<\/title>/i);
-          var name = m ? m[1].replace(/<[^>]+>/g,"").trim() : file.name.replace(/\.html?$/i,"");
-          if(!name || name === "") name = file.name;
-          
-          data.push({
-            id: uid(),
-            naslov: name,
-            htmlContent: c,
-            datum: new Date().toISOString(),
-            kategorija: k,
-            subkategorija: s
-          });
-          processed++;
-          if(processed === total){
-            setAll(data);
-            render();
-            toast("✅ Зачувани " + data.length + " HTML датотеки" + (errors.length ? " (грешки: " + errors.join("; ") + ")" : ""));
-          }
-        }catch(err){
-          errors.push(file.name + ": " + err.message);
-          processed++;
-          if(processed === total){
-            if(data.length > 0){
-              setAll(data);
-              render();
-              toast("⚠️ Зачувани " + data.length + " датотеки, грешки: " + errors.join("; "));
-            } else {
-              toast("❌ Сите датотеки имаат грешки: " + errors.join("; "));
-            }
-          }
-        }
-      };
-      reader.onerror = function(){
-        errors.push(file.name + ": грешка при читање");
-        processed++;
-        if(processed === total){
-          if(data.length > 0){
-            setAll(data);
-            render();
-            toast("⚠️ Зачувани " + data.length + " датотеки, грешки: " + errors.join("; "));
-          } else {
-            toast("❌ Сите датотеки имаат грешки: " + errors.join("; "));
-          }
-        }
-      };
-      reader.readAsText(file);
-    });
-  }
-
-  function addDoc(files){
-    if(!files || !files.length){
-      toast("❌ Нема избрани датотеки");
-      return;
-    }
-    var k=cat==="site"?"matematika":cat;
-    var s=k==="matematika"?(sub||"podgotovka"):null;
-    var max=k==="matematika"?MAX[s]:MAX.klasen;
-    if(max&&cnt(k,s)>=max){toast("❌ Нема слободни места");return}
-    
-    var data = all();
-    var processed = 0;
-    var errors = [];
-    var total = files.length;
-
-    Array.prototype.forEach.call(files, function(file){
-      var reader = new FileReader();
-      reader.onload = function(e){
-        try{
-          var arrayBuffer = e.target.result;
-          var bytes = new Uint8Array(arrayBuffer);
-          var binary = "";
-          for(var i=0; i<bytes.length; i++){
-            binary += String.fromCharCode(bytes[i]);
-          }
-          var b64 = btoa(binary);
-          
-          var ext = file.name.split('.').pop().toLowerCase();
-          var mimeTypes = {
-            'pdf': 'application/pdf',
-            'doc': 'application/msword',
-            'docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-            'xls': 'application/vnd.ms-excel',
-            'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-            'txt': 'text/plain',
-            'md': 'text/markdown'
-          };
-          var mime = mimeTypes[ext] || file.type || "application/octet-stream";
-          
-          data.push({
-            id: uid(),
-            naslov: file.name,
-            htmlContent: null,
-            datum: new Date().toISOString(),
-            kategorija: k,
-            subkategorija: s,
-            fileType: mime,
-            fileData: b64,
-            fileName: file.name
-          });
-          processed++;
-          if(processed === total){
-            setAll(data);
-            render();
-            toast("✅ Зачувани " + data.length + " документи" + (errors.length ? " (грешки: " + errors.join("; ") + ")" : ""));
-          }
-        }catch(err){
-          errors.push(file.name + ": " + err.message);
-          processed++;
-          if(processed === total){
-            if(data.length > 0){
-              setAll(data);
-              render();
-              toast("⚠️ Зачувани " + data.length + " датотеки, грешки: " + errors.join("; "));
-            } else {
-              toast("❌ Сите датотеки имаат грешки: " + errors.join("; "));
-            }
-          }
-        }
-      };
-      reader.onerror = function(){
-        errors.push(file.name + ": грешка при читање");
-        processed++;
-        if(processed === total){
-          if(data.length > 0){
-            setAll(data);
-            render();
-            toast("⚠️ Зачувани " + data.length + " датотеки, грешки: " + errors.join("; "));
-          } else {
-            toast("❌ Сите датотеки имаат грешки: " + errors.join("; "));
-          }
-        }
-      };
-      reader.readAsArrayBuffer(file);
-    });
-  }
-
-  function addJson(file){
-    if(!file){ toast("❌ Нема датотека"); return; }
-    var reader = new FileReader();
-    reader.onload = function(e){
-      try{
-        var a = JSON.parse(e.target.result);
-        if(!Array.isArray(a)){ toast("❌ JSON мора да биде низа"); return; }
-        setAll(a);
-        localStorage.setItem(SNAP, JSON.stringify(a));
-        render();
-        toast("✅ Зачувани " + a.length + " записи од JSON");
-      }catch(err){
-        toast("❌ Невалиден JSON: " + err.message);
-      }
+function addHtml(files){
+  var data=getAll();
+  var k=cat==="site"?"matematika":cat;
+  var s=k==="matematika"?(sub||"podgotovka"):null;
+  var max=k==="matematika"?MAX[s]:MAX.klasen;
+  if(max && countIn(k,s)>=max){ toast("Нема слободни места"); return; }
+  Array.prototype.forEach.call(files, function(file){
+    var r=new FileReader();
+    r.onload=function(e){
+      var c=e.target.result;
+      var m=c.match(/<title>([\s\S]*?)<\/title>/i);
+      var name=m?m[1].replace(/<[^>]+>/g,"").trim():file.name.replace(/\.html?$/i,"");
+      data=getAll(); // fresh
+      data.push({id:uid(),naslov:name,htmlContent:c,datum:new Date().toISOString(),kategorija:k,subkategorija:s});
+      setAll(data);
+      render();
+      toast("✅ "+name);
     };
-    reader.onerror = function(){ toast("❌ Грешка при читање на JSON"); };
-    reader.readAsText(file);
-  }
-
-  function delOne(id){
-    if(!confirm("Избриши?")) return;
-    setAll(all().filter(function(i){ return i.id !== id; }));
-    render();
-    toast("🗑 Избришано");
-  }
-
-  function clearList(){
-    if(!confirm("Избриши листа?")) return;
-    var data = all(), next;
-    if(q || cat === "site") next = [];
-    else next = data.filter(function(i){
-      if(cat === "matematika") return !(i.kategorija === "matematika" && (!sub || i.subkategorija === sub));
-      if(cat === "klasen-cas") return i.kategorija !== "klasen-cas";
-      return true;
-    });
-    setAll(next);
-    render();
-    toast("🗑 Листата е исчистена");
-  }
-
-  function bind(){
-    document.getElementById("back").onclick = back;
-    document.getElementById("q1").addEventListener("input", function(){ doSearch(this.value); });
-    document.getElementById("q2").addEventListener("input", function(){ doSearch(this.value); });
-    
-    document.getElementById("bHtml").onclick = function(){ document.getElementById("fHtml").click(); };
-    document.getElementById("bDoc").onclick = function(){ document.getElementById("fDoc").click(); };
-    document.getElementById("bJson").onclick = function(){ document.getElementById("fJson").click(); };
-    document.getElementById("bSave").onclick = saveDB;
-    document.getElementById("bClear").onclick = clearList;
-    document.getElementById("bTbl").onclick = toggleTbl;
-    document.getElementById("bTbl2").onclick = toggleTbl;
-    
-    // ОВИЕ СЕ ПОПРАВЕНИ - директно поврзување на onchange
-    document.getElementById("fHtml").onchange = function(){ 
-      if(this.files && this.files.length) {
-        addHtml(this.files);
-        this.value = "";
-      }
-    };
-    document.getElementById("fDoc").onchange = function(){ 
-      if(this.files && this.files.length) {
-        addDoc(this.files);
-        this.value = "";
-      }
-    };
-    document.getElementById("fJson").onchange = function(){ 
-      if(this.files && this.files.length) {
-        addJson(this.files[0]);
-        this.value = "";
-      }
-    };
-
-    document.getElementById("main").addEventListener("click", function(e){
-      var go = e.target.closest("[data-go]");
-      if(go){ openCat(go.getAttribute("data-go")); return; }
-      var su = e.target.closest("[data-sub]");
-      if(su){ openSub(su.getAttribute("data-sub")); return; }
-      var del = e.target.closest("[data-del]");
-      if(del){ e.preventDefault(); e.stopPropagation(); delOne(del.getAttribute("data-del")); return; }
-      var it = e.target.closest(".item[data-id], button.bp[data-id]");
-      if(it) openDoc(it.getAttribute("data-id"));
-    });
-
-    document.getElementById("nav").addEventListener("click", function(e){
-      var b = e.target.closest("button[data-n]");
-      if(!b) return;
-      var n = b.getAttribute("data-n");
-      if(n === "home") home();
-      else if(n === "math") openCat("math");
-      else if(n === "class") openCat("class");
-      else if(n === "all") openCat("all");
-      else if(n === "save") saveDB();
-      else if(n === "close") closeApp();
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", function(){
-    seed();
-    bind();
-    setTimeout(function(){
-      document.getElementById("p1").classList.remove("on");
-      document.getElementById("p2").classList.add("on");
-      setTimeout(function(){
-        document.getElementById("intro").style.display = "none";
-        document.getElementById("shell").classList.add("show");
-        home();
-      }, 2200);
-    }, 2200);
+    r.readAsText(file);
   });
+}
+function addDoc(files){
+  var k=cat==="site"?"matematika":cat;
+  var s=k==="matematika"?(sub||"podgotovka"):null;
+  var max=k==="matematika"?MAX[s]:MAX.klasen;
+  if(max && countIn(k,s)>=max){ toast("Нема слободни места"); return; }
+  Array.prototype.forEach.call(files, function(file){
+    var r=new FileReader();
+    r.onload=function(e){
+      var c=e.target.result, b64="";
+      try{b64=btoa(c)}catch(err){b64=btoa(unescape(encodeURIComponent(c)))}
+      var data=getAll();
+      data.push({id:uid(),naslov:file.name,htmlContent:null,datum:new Date().toISOString(),kategorija:k,subkategorija:s,fileType:file.type||"application/octet-stream",fileData:b64,fileName:file.name});
+      setAll(data); render(); toast("✅ "+file.name);
+    };
+    r.readAsBinaryString(file);
+  });
+}
+function addJson(file){
+  if(!file) return;
+  var r=new FileReader();
+  r.onload=function(e){
+    try{
+      var a=JSON.parse(e.target.result);
+      if(!Array.isArray(a)){ toast("JSON мора да е низа"); return; }
+      setAll(a);
+      localStorage.setItem(SNAP, JSON.stringify(a));
+      render();
+      toast("✅ Увезени "+a.length+" записи");
+    }catch(err){ toast("Невалиден JSON"); }
+  };
+  r.readAsText(file);
+}
+
+function delOne(id){
+  if(!confirm("Избриши?")) return;
+  setAll(getAll().filter(function(i){return i.id!==id}));
+  render(); toast("🗑 Избришано");
+}
+function clearList(){
+  if(!confirm("Избриши ги документите во оваа листа?")) return;
+  var all=getAll();
+  var next;
+  if(q || cat==="site") next=[];
+  else next=all.filter(function(i){
+    if(cat==="matematika") return !(i.kategorija==="matematika"&&(!sub||i.subkategorija===sub));
+    if(cat==="klasen-cas") return i.kategorija!=="klasen-cas";
+    return true;
+  });
+  setAll(next); render(); toast("🗑 Избришано");
+}
+
+function intro(){
+  setTimeout(function(){
+    document.getElementById("s1").classList.remove("on");
+    document.getElementById("s2").classList.add("on");
+    setTimeout(function(){
+      var i=document.getElementById("intro");
+      i.style.transition="opacity .45s"; i.style.opacity="0";
+      setTimeout(function(){
+        i.style.display="none";
+        document.getElementById("chromeHeader").classList.add("on");
+        document.getElementById("chromeNav").classList.add("on");
+        goHome();
+      },450);
+    },2500);
+  },2500);
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+  seedIfEmpty();
+  intro();
+  document.getElementById("q1").addEventListener("input", function(){ doSearch(this.value,"q1"); });
+  document.getElementById("q2").addEventListener("input", function(){ doSearch(this.value,"q2"); });
+  document.getElementById("fHtml").addEventListener("change", function(){ addHtml(this.files); this.value=""; });
+  document.getElementById("fDoc").addEventListener("change", function(){ addDoc(this.files); this.value=""; });
+  document.getElementById("fJson").addEventListener("change", function(){ addJson(this.files[0]); this.value=""; });
+});
+
+// expose for inline onclick
+window.goHome=goHome; window.goBack=goBack; window.openCat=openCat; window.openSub=openSub;
+window.saveDB=saveDB; window.closeApp=closeApp; window.clearList=clearList;
 })();
 </script>
 </body>
