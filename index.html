@@ -286,23 +286,28 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
   function openDoc(id){
     var it=all().filter(function(x){return x.id===id})[0];
     if(!it){ toast("Нема документ"); return; }
-    setHdr(it.naslov||"Преглед","Преглед на документ", true);
-    preview=true;
-    var fr=document.getElementById("frame");
     if(it.htmlContent){
       var u=URL.createObjectURL(new Blob([it.htmlContent],{type:"text/html;charset=utf-8"}));
-      fr.src=u;
+      var w=window.open(u, "_blank");
+      if(!w) toast("⚠️ Прелистувачот го блокираше новиот прозорец. Дозволи попапи.");
       setTimeout(function(){try{URL.revokeObjectURL(u)}catch(e){}},120000);
     } else if(it.fileData){
       try{
         var bin=atob(it.fileData), bytes=new Uint8Array(bin.length);
         for(var i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
         var blob=new Blob([bytes],{type:it.fileType||"application/octet-stream"});
-        if((it.fileType||"").indexOf("pdf")>=0) fr.src=URL.createObjectURL(blob);
-        else { var a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=it.fileName||"doc"; a.click(); toast("Преземање…"); preview=false; return; }
-      }catch(e){ toast("Грешка"); preview=false; return; }
-    } else { toast("Нема содржина"); preview=false; return; }
-    document.getElementById("preview").classList.add("on");
+        var u=URL.createObjectURL(blob);
+        if((it.fileType||"").indexOf("pdf")>=0){
+          var w=window.open(u, "_blank");
+          if(!w) toast("⚠️ Прелистувачот го блокираше новиот прозорец. Дозволи попапи.");
+          setTimeout(function(){try{URL.revokeObjectURL(u)}catch(e){}},120000);
+        } else {
+          var a=document.createElement("a"); a.href=u; a.download=it.fileName||"doc"; a.click();
+          toast("Преземање…");
+          setTimeout(function(){try{URL.revokeObjectURL(u)}catch(e){}},60000);
+        }
+      }catch(e){ toast("Грешка"); }
+    } else { toast("Нема содржина"); }
   }
   function closePreview(silent){
     preview=false;
